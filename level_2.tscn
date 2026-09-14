@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://bms4pp2vk4pb0"]
+
+[ext_resource type="PackedScene" uid="uid://cf0w0skqs3k64" path="res://Scenes/player.tscn" id="1_7dov7"]
+[ext_resource type="PackedScene" uid="uid://8e3xo8kxu83i" path="res://dock.tscn" id="2_ehv2h"]
+[ext_resource type="PackedScene" uid="uid://ctklbcomqq60u" path="res://ship.scn" id="3_15wb7"]
+[ext_resource type="Texture2D" uid="uid://dvsdwrdwldmd4" path="res://Gemini_Generated_Image_acgji0acgji0acgj.jpg" id="3_ehv2h"]
+[ext_resource type="PackedScene" uid="uid://bk5n0tn4k1l0c" path="res://Scenes/Coin.tscn" id="4_eoq84"]
+[ext_resource type="Script" uid="uid://dxc4cdl3tsvrj" path="res://Scripts/GameManager.gd" id="5_yl73a"]
+[ext_resource type="Script" uid="uid://bpbjc2oxm2mpf" path="res://Scripts/DeadZone.gd" id="6_xbcdb"]
+[ext_resource type="Script" uid="uid://bblncv7qj864l" path="res://Scripts/GameUI.gd" id="7_s77qv"]
+[ext_resource type="Texture2D" uid="uid://cnbbny7qjh2xn" path="res://Assets/Textures/coin.png" id="8_5hnhx"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sx1u2"]
+panorama = ExtResource("3_ehv2h")
+
+[sub_resource type="Sky" id="Sky_3tqca"]
+resource_local_to_scene = true
+sky_material = SubResource("PanoramaSkyMaterial_sx1u2")
+
+[sub_resource type="Environment" id="Environment_g4ka7"]
+background_mode = 2
+background_color = Color(0.764706, 0.764706, 0.764706, 1)
+sky = SubResource("Sky_3tqca")
+ambient_light_source = 2
+ambient_light_color = Color(0.662745, 0.694118, 0.772549, 1)
+ambient_light_energy = 1.15
+tonemap_mode = 2
+tonemap_exposure = 0.75
+ssr_enabled = true
+ssao_enabled = true
+ssao_radius = 0.45
+ssao_intensity = 1.0
+ssao_power = 15.0
+ssil_enabled = true
+sdfgi_use_occlusion = true
+glow_enabled = true
+glow_intensity = 2.0
+fog_light_color = Color(0.647059, 0.678431, 0.72549, 1)
+volumetric_fog_temporal_reprojection_enabled = false
+adjustment_enabled = true
+adjustment_brightness = 1.06
+adjustment_contrast = 0.95
+adjustment_saturation = 1.09
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_asf4q"]
+size = Vector3(128, 17, 112)
+
+[sub_resource type="SystemFont" id="SystemFont_1ixsq"]
+font_names = PackedStringArray("Star Choco")
+multichannel_signed_distance_field = true
+
+[sub_resource type="SystemFont" id="SystemFont_656xb"]
+font_names = PackedStringArray("Star Choco")
+
+[sub_resource type="LabelSettings" id="LabelSettings_igq7x"]
+font = SubResource("SystemFont_656xb")
+font_size = 50
+font_color = Color(0.996094, 0.691406, 0.261719, 1)
+
+[node name="level-2" type="Node3D" unique_id=399932848]
+
+[node name="Player" parent="." unique_id=1240980727 instance=ExtResource("1_7dov7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="Platforms" type="Node3D" parent="." unique_id=2137810002]
+
+[node name="StaticBody3D" parent="Platforms" unique_id=185223027 instance=ExtResource("2_ehv2h")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 3.6840277, -4.7414455, -5.295314)
+
+[node name="StaticBody3D2" parent="Platforms" unique_id=1884250451 instance=ExtResource("2_ehv2h")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0.96500015, -3.2387118, -17.896727)
+
+[node name="StaticBody3D6" parent="Platforms" unique_id=301704833 instance=ExtResource("2_ehv2h")]
+transform = Transform3D(22.499985, 0, 0, 0, 22.499985, 0, 0, 0, 22.499985, 21.294779, -5.8674717, -24.625084)
+
+[node name="StaticBody3D7" parent="Platforms" unique_id=514351589 instance=ExtResource("2_ehv2h")]
+transform = Transform3D(22.499968, 0, 0, 0, 22.499968, 0, 0, 0, 22.499968, 38.819855, -4.2192645, -24.793533)
+
+[node name="StaticBody3D4" parent="Platforms" unique_id=1419543739 instance=ExtResource("2_ehv2h")]
+transform = Transform3D(22.499931, 0, 0, 0, 22.499931, 0, 0, 0, 22.499931, 37.68347, -2.894733, -42.830536)
+
+[node name="StaticBody3D5" parent="Platforms" unique_id=594179850 instance=ExtResource("2_ehv2h")]
+transform = Transform3D(22.49993, 0, 0, 0, 22.49993, 0, 0, 0, 22.49993, 35.99142, -3.0877986, -62.44013)
+
+[node name="StaticBody3D3" parent="Platforms" unique_id=1490564277 instance=ExtResource("2_ehv2h")]
+transform = Transform3D(22.49995, 0, 0, 0, 22.49995, 0, 0, 0, 22.49995, 34.28032, -8.002058, -81.394226)
+
+[node name="StaticBody3D8" parent="Platforms" unique_id=1582758454 instance=ExtResource("2_ehv2h")]
+transform = Transform3D(22.49995, 0, 0, 0, 22.49995, 0, 0, 0, 22.49995, 20.178062, -6.8227587, -81.038574)
+
+[node name="StaticBody3D9" parent="Platforms" unique_id=286311465 instance=ExtResource("2_ehv2h")]
+transform = Transform3D(22.49995, 0, 0, 0, 22.49995, 0, 0, 0, 22.49995, 1.9623318, -9.003754, -74.71417)
+
+[node name="StaticBody3D10" parent="Platforms" unique_id=1275542742 instance=ExtResource("2_ehv2h")]
+transform = Transform3D(22.49995, 0, 0, 0, 22.49995, 0, 0, 0, 22.49995, -4.7011786, -6.636476, -39.790485)
+
+[node name="StaticBody3D11" parent="Platforms" unique_id=807761088 instance=ExtResource("2_ehv2h")]
+transform = Transform3D(22.49995, 0, 0, 0, 22.49995, 0, 0, 0, 22.49995, -5.858364, -7.6992254, -58.401665)
+
+[node name="Environment" type="Node3D" parent="." unique_id=2096954712]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=39783545]
+environment = SubResource("Environment_g4ka7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=1967534091]
+transform = Transform3D(-0.8986029, 0.4387628, 3.045356e-08, 0.14665699, 0.300359, 0.9424841, 0.41352695, 0.84691894, -0.3342511, 5.009551, 53.378788, -50.7185)
+shadow_enabled = true
+
+[node name="Extras" type="Node3D" parent="." unique_id=1713379735]
+
+[node name="SpawnPosition" type="Marker3D" parent="Extras" unique_id=1467286471]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="Coins" type="Node3D" parent="." unique_id=1950141197]
+
+[node name="Coin" parent="Coins" unique_id=714083451 instance=ExtResource("4_eoq84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.126303, 5.706604, -52.89266)
+
+[node name="Coin2" parent="Coins" unique_id=1967623933 instance=ExtResource("4_eoq84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.826327, 7.8977203, -18.248058)
+
+[node name="Coin3" parent="Coins" unique_id=1801777354 instance=ExtResource("4_eoq84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.73738, 3.8558273, -31.33828)
+
+[node name="Coin4" parent="Coins" unique_id=513104822 instance=ExtResource("4_eoq84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.640926, 11.480455, -40.231583)
+
+[node name="Coin5" parent="Coins" unique_id=39536146 instance=ExtResource("4_eoq84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.653587, 6.004965, -75.584236)
+
+[node name="ship" parent="Coins" unique_id=964656304 instance=ExtResource("3_15wb7")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -39.291527, 1.0809288, -33.06299)
+
+[node name="GameManager" type="Node3D" parent="." unique_id=2056889865]
+script = ExtResource("5_yl73a")
+
+[node name="DeadZone" type="Area3D" parent="." unique_id=1837004375]
+script = ExtResource("6_xbcdb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeadZone" unique_id=991495681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9, 0)
+shape = SubResource("BoxShape3D_asf4q")
+
+[node name="UserInterface" type="CanvasLayer" parent="." unique_id=1915850973]
+
+[node name="GameUI" type="Control" parent="UserInterface" unique_id=1506510226]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_s77qv")
+
+[node name="CoinTexture" type="TextureRect" parent="UserInterface/GameUI" unique_id=1965478431]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 31.0
+offset_right = 122.0
+offset_bottom = 121.0
+texture = ExtResource("8_5hnhx")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CoinsLabel" type="Label" parent="UserInterface/GameUI" unique_id=1857655925]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 50.0
+offset_right = 193.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.996094, 0.710938, 0.261719, 1)
+theme_override_colors/font_outline_color = Color(0.644531, 0.410156, 0.1875, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_1ixsq")
+theme_override_font_sizes/font_size = 48
+text = "X 3"
+label_settings = SubResource("LabelSettings_igq7x")
+
+[connection signal="body_entered" from="DeadZone" to="DeadZone" method="_on_body_entered"]

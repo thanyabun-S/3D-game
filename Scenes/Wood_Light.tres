@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bujv0bq5kjf3r"]
+
+[resource]
+resource_name = "Wood_Light"
+albedo_color = Color(0.6466568, 0.5303227, 0.34488147, 1)
+metallic = 0.4
+roughness = 0.27216554
+metadata/extras = {
+"fromFBX": {
+"isTruePBR": false,
+"shadingModel": "Phong"
+}
+}
